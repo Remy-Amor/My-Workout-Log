@@ -20,5 +20,14 @@ namespace MyWorkoutLog
         {
             InitializeComponent();
         }
+
+        enum WeightUnits
+        {
+            KG, LB
+        }
+        enum EquipmentTypes
+          {
+               dumbbells, barbell, cablemachine, resistanceband, machine, other
+          }
     }
 }
