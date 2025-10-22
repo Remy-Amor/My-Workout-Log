@@ -13,9 +13,19 @@ namespace MyWorkoutLog
           {
                _workoutTemplates.Add(workout);
           }
+
+          public void RemoveTemplate(Workout workout)
+          {
+               _workoutTemplates.Remove(workout);
+          }
+
           public void AddExercise(Exercise exercise)
           {
                _createdExercises.Add(exercise);
+          }
+          public void RemoveExercise(Exercise exercise)
+          {
+               _createdExercises.Remove(exercise);
           }
 
           public override void ClearData()
