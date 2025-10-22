@@ -2,11 +2,8 @@ namespace MyWorkoutLog
 {
      public class Guest : BaseUser
      {
-          public Guest()
+          public Guest() : base("Guest", "")
           {
-               _username = "Guest";
-               _password = "";
-               _accountPermissions = false;
           }
      }
 }

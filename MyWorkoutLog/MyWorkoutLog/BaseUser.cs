@@ -12,6 +12,7 @@ namespace MyWorkoutLog
                _username = name;
                _password = password;
                _workoutHistory = new Dictionary<Workout, int>();
+               _accountPermissions = false;
           }
 
           public virtual void ClearData()
@@ -28,6 +29,47 @@ namespace MyWorkoutLog
           {
                _workoutHistory.Add(_currentWorkout, DateTime.Today.ToString);
                _currentWorkout = null;
+          }
+
+          // Properties
+          public Dictionary<Workout, int> WorkoutHistory
+          {
+               get
+               {
+                    return _workoutHistory;
+               }
+          }
+
+          public string Username
+          {
+               get
+               {
+                    return _username;
+               }
+          }
+
+          public string Password
+          {
+               get
+               {
+                    return _password;
+               }
+          }
+
+          public bool AccountPermissions
+          {
+               get
+               {
+                    return _accountPermissions;
+               }
+          }
+
+          public Workout CurrentWorkout
+          {
+               get
+               {
+                    return _currentWorkout;
+               }
           }
      }
 }
