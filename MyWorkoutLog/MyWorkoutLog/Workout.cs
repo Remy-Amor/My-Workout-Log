@@ -3,11 +3,17 @@ namespace MyWorkoutLog
      public class Workout : DescribableObject
      {
           private List<Exercise> _exerciseList;
-          private int? _dateCompleted;
+          private DateOnly? _dateCompleted;
 
-          public Workout(string name, string note, List<Exercise> exerciseList, int? dateCompleted) : base(name, note)
+          public Workout(string name, string note, List<Exercise> exerciseList, DateOnly? dateCompleted) : base(name, note)
           {
                _exerciseList = exerciseList;
+               _dateCompleted = dateCompleted;
+          }
+
+          public Workout(string name, List<Exercise> exercistList, DateOnly dateCompleted) : base(name, "")
+          {
+               _exerciseList = exercistList;
                _dateCompleted = dateCompleted;
           }
 
@@ -30,15 +36,15 @@ namespace MyWorkoutLog
                }
           }
 
-          public int? DateCompleted
+          public string DateCompleted
           {
                get
                {
-                    return _dateCompleted;
+                    return _dateCompleted.ToString();
                }
                set
                {
-                    _dateCompleted = value;
+                    _dateCompleted = DateOnly.Parse(value);
                }
           }
      }

@@ -4,23 +4,23 @@ namespace MyWorkoutLog
      {
           private int _reps;
           private float _weight;
-          private string _weightUnit;
-          private string _equipment;
+          private WeightUnit _weightUnit;
+          private EquipmentType _equipment;
 
-          public Exercise(string name, string note, int reps, float weight, string weightunits, string equipment) : base(name, note)
+          public Exercise(string name, string note, int reps, float weight, WeightUnit weightunits, EquipmentType equipment) : base(name, note)
           {
                _reps = reps;
                _weight = weight;
-               _weightunits = weightunits;
+               _weightUnit = weightunits;
                _equipment = equipment;
           }
 
-          public Exercise(string name, string note, string equipment) : base(name, note)
+          public Exercise(string name, string note, EquipmentType equipment) : base(name, note)
           {
                _equipment = equipment;
           }
 
-          public Exercise(string name, string equipment) : base(name, "")
+          public Exercise(string name, EquipmentType equipment) : base(name, "")
           {
                _equipment = equipment;
           }
@@ -33,6 +33,10 @@ namespace MyWorkoutLog
                {
                     return _reps;
                }
+               set
+               {
+                    _reps = value;
+               }
           }
 
           public float Weight
@@ -41,21 +45,33 @@ namespace MyWorkoutLog
                {
                     return _weight;
                }
+               set
+               {
+                    _weight = value;
+               }
           }
 
-          public string WeightUnit
+          public WeightUnit WeightUnit
           {
                get
                {
                     return _weightUnit;
                }
+               set
+               {
+                    _weightUnit = value;
+               }
           }
 
-          public string Equipment
+          public EquipmentType Equipment
           {
                get
                {
                     return _equipment;
+               }
+               set
+               {
+                    _equipment = value;
                }
           }
      }

@@ -16,18 +16,16 @@ namespace MyWorkoutLog
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Exercise testExercise = new Exercise("Something", EquipmentType.barbell);
         public MainWindow()
         {
             InitializeComponent();
+            List<Exercise> exerciseList = new List<Exercise> {testExercise};
+            Workout testWorkout = new Workout("Upper", exerciseList, DateOnly.FromDateTime(DateTime.Now));
+
+            Console.WriteLine(testWorkout.Name + exerciseList[0].Name);
         }
 
-        enum WeightUnits
-        {
-            KG, LB
-        }
-        enum EquipmentTypes
-          {
-               dumbbells, barbell, cablemachine, resistanceband, machine, other
-          }
+        
     }
 }

@@ -1,7 +1,9 @@
-﻿namespace testWorkoutLog;
+﻿using MyWorkoutLog;
+namespace testWorkoutLog;
 
 public class Tests
 {
+    
     [SetUp]
     public void Setup()
     {

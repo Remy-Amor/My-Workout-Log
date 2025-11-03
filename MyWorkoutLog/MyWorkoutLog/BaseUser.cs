@@ -2,7 +2,7 @@ namespace MyWorkoutLog
 {
      public abstract class BaseUser : IUsers
      {
-          private Dictionary<Workout, int> _workoutHistory;
+          private Dictionary<Workout, DateOnly> _workoutHistory;
           private string _username;
           private string _password;
           private bool _accountPermissions;
@@ -11,14 +11,14 @@ namespace MyWorkoutLog
           {
                _username = name;
                _password = password;
-               _workoutHistory = new Dictionary<Workout, int>();
+               _workoutHistory = new Dictionary<Workout, DateOnly>();
                _accountPermissions = false;
           }
 
           public virtual void ClearData()
           {
                _workoutHistory.Clear();
-               _currentWorkout.Clear();
+               _currentWorkout = null;
           }
 
           public void StartWorkout(Workout workout)
@@ -27,12 +27,12 @@ namespace MyWorkoutLog
           }
           public void FinishWorkout()
           {
-               _workoutHistory.Add(_currentWorkout, DateTime.Today.ToString);
+               _workoutHistory.Add(_currentWorkout, DateOnly.FromDateTime(DateTime.Now));
                _currentWorkout = null;
           }
 
           // Properties
-          public Dictionary<Workout, int> WorkoutHistory
+          public Dictionary<Workout, DateOnly> WorkoutHistory
           {
                get
                {
@@ -62,9 +62,13 @@ namespace MyWorkoutLog
                {
                     return _accountPermissions;
                }
+               set
+               {
+                    _accountPermissions = value;
+               }
           }
 
-          public Workout CurrentWorkout
+          public Workout? CurrentWorkout
           {
                get
                {
