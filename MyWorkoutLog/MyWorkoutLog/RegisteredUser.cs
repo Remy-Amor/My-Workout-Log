@@ -6,7 +6,7 @@ namespace MyWorkoutLog
           private List<Exercise> _createdExercises = new List<Exercise>();
           public RegisteredUser(string name, string password) : base(name, password)
           {
-               _accountPermissions = true;
+               AccountPermissions = true;
           }
 
           public void SaveAsTemplate(Workout workout)
