@@ -20,10 +20,10 @@ namespace MyWorkoutLog
         public MainWindow()
         {
             InitializeComponent();
-            List<Exercise> exerciseList = new List<Exercise> {testExercise};
+            List<Exercise> exerciseList = new List<Exercise> { testExercise };
             Workout testWorkout = new Workout("Upper", exerciseList, DateOnly.FromDateTime(DateTime.Now));
 
-            Console.WriteLine(testWorkout.Name + exerciseList[0].Name);
+            testText.Text = "Something is working!\n" + testWorkout.Name + exerciseList[0].Equipment.ToString();
         }
 
         
