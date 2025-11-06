@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "XhJ2oZZ7xRY=",
+  "dgSpecHash": "PiXsAs7aAfI=",
   "success": true,
   "projectFilePath": "C:\\Users\\remyo\\OneDrive\\Documents\\compSci_Y1\\Semester 2\\objectOriented\\My Workout Log\\MyWorkoutLog\\MyWorkoutLog\\MyWorkoutLog.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\remyo\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.10\\microsoft.extensions.dependencyinjection.9.0.10.nupkg.sha512",
+    "C:\\Users\\remyo\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.10\\microsoft.extensions.dependencyinjection.abstractions.9.0.10.nupkg.sha512"
+  ],
   "logs": []
 }
