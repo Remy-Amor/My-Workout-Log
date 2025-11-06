@@ -15,7 +15,10 @@ namespace MyWorkoutLog
         public App()
         {
             IServiceCollection services = new ServiceCollection();
-            services.AddSingleton<MainWindow>();
+            services.AddSingleton<MainWindow>(serviceProvider => new MainWindow
+            {
+                DataContext = serviceProvider.GetRequiredService<MainviewModel>()
+            });
             services.AddSingleton<MainviewModel>();
             services.AddSingleton<HomeViewModel>();
             services.AddSingleton<AccountViewModel>();
