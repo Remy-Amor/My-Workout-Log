@@ -4,8 +4,9 @@ namespace MyWorkoutLog.Core;
 
 public class RelayCommand : ICommand
 {
-
+    // boolean based on whether or not matching criteria is true
     private readonly Predicate<object> _canExecute;
+    // encapsulation of method with single parameter and no return value
     private readonly Action<object> _execute;
 
     public RelayCommand(Action<object> execute,Predicate<object> canExecute)

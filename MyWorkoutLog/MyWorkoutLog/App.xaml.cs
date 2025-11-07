@@ -1,8 +1,11 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using MyWorkoutLog.Core;
 using MyWorkoutLog.MVVM.ViewModels;
+using MyWorkoutLog.Services;
 using System.Configuration;
 using System.Data;
 using System.Windows;
+using System.Windows.Navigation;
 
 namespace MyWorkoutLog
 {
@@ -26,6 +29,13 @@ namespace MyWorkoutLog
             services.AddSingleton<HistoryViewModel>();
             services.AddSingleton<TemplatesViewModel>();
 
+            // add navigation service defined in NavigationService.cs
+            services.AddSingleton<INavigationService, Services.NavigationService>();
+
+            // register the factory function for returning or creating the viewmodel using service provider and navigationservice
+            services.AddSingleton<Func<Type, ViewModel>>(serviceProvider => viewModelType => (ViewModel)serviceProvider.GetRequiredService(viewModelType));
+
+            // create service provider containing services added to the IServiceCollcetion services
             _serviceProvider = services.BuildServiceProvider();
             
         }
