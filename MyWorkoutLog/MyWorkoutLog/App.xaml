@@ -6,9 +6,6 @@
              xmlns:view="clr-namespace:MyWorkoutLog.view"
              >
     <Application.Resources>
-        <DataTemplate DataType="{x:Type viewModels:HomeViewModel}">
-            <view:Home/>
-        </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:AccountViewModel}">
             <view:Account/>
         </DataTemplate>

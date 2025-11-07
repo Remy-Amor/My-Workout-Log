@@ -55,7 +55,7 @@ namespace MyWorkoutLog {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MyWorkoutLog;component/mvvm/view/mainwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MyWorkoutLog;V1.0.0.0;component/mvvm/view/mainwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\MVVM\view\MainWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

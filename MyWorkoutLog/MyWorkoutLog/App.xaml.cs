@@ -23,7 +23,6 @@ namespace MyWorkoutLog
                 DataContext = serviceProvider.GetRequiredService<MainviewModel>()
             });
             services.AddSingleton<MainviewModel>();
-            services.AddSingleton<HomeViewModel>();
             services.AddSingleton<AccountViewModel>();
             services.AddSingleton<ExercisesViewModel>();
             services.AddSingleton<HistoryViewModel>();
