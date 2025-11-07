@@ -20,13 +20,15 @@ namespace MyWorkoutLog
             IServiceCollection services = new ServiceCollection();
             services.AddSingleton<MainWindow>(serviceProvider => new MainWindow
             {
-                DataContext = serviceProvider.GetRequiredService<MainviewModel>()
+                DataContext = serviceProvider.GetRequiredService<MainViewModel>()
             });
-            services.AddSingleton<MainviewModel>();
+            services.AddSingleton<MainViewModel>();
+            services.AddSingleton<HomeViewModel>();
             services.AddSingleton<AccountViewModel>();
             services.AddSingleton<ExercisesViewModel>();
             services.AddSingleton<HistoryViewModel>();
             services.AddSingleton<TemplatesViewModel>();
+
 
             // add navigation service defined in NavigationService.cs
             services.AddSingleton<INavigationService, Services.NavigationService>();
@@ -41,6 +43,7 @@ namespace MyWorkoutLog
 
         protected override void OnStartup(StartupEventArgs e)
         {
+
             var mainWindow = _serviceProvider.GetRequiredService<MainWindow>();
             mainWindow.Show();
             base.OnStartup(e);
