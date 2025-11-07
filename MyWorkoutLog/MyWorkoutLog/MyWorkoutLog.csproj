@@ -17,10 +17,4 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.10" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="MVVM\viewmodels\HomeViewModel.cs">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Compile>
-  </ItemGroup>
-
 </Project>

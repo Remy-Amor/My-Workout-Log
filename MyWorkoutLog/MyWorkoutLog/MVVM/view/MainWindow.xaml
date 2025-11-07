@@ -3,15 +3,78 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MyWorkoutLog"
+        xmlns:local="clr-namespace:MyWorkoutLog.view"
+        xmlns:MyWorkoutLog="clr-namespace:MyWorkoutLog"
         xmlns:viewmodel="clr-namespace:MyWorkoutLog.MVVM.ViewModels"
-        xmlns:views="clr-namespace:MyWorkoutLog.view"
+        xmlns:views="clr-namespace:MyWorkoutLog.view" d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
         mc:Ignorable="d"
         Title="Home Page" Height="800" Width="450"
         Background="#1E6091"
         WindowStartupLocation = "CenterScreen">
-
+    
+    <Window.Resources>
+        <!-- Modern Nav Button Style -->
+        <Style x:Key="NavButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#ECF0F1"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                            CornerRadius="6"
+                            Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="black"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="black"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!-- Modern Navbar -->
+        <Border Background="#2C3E50" Height="60" VerticalAlignment="Top" Padding="0" Grid.ColumnSpan="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="8*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="My Workout Log" Foreground="White" FontSize="16" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <!-- Navigation Buttons -->
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Button x:Name="HomeButton" Content="Home" Command="{Binding NavigateHomeCommand}" Style="{StaticResource NavButtonStyle}"/>
+                    <Button x:Name="AccountButton" Content="Account" Command="{Binding NavigateAccountCommand}" Style="{StaticResource NavButtonStyle}"/>
+                    <Button x:Name="ProjectsButton" Content="Exercises" Command="{Binding NavigateExercisesCommand}" Style="{StaticResource NavButtonStyle}" />
+                    <Button x:Name="AnalyticsButton" Content="History" Command="{Binding NavigateHistoryCommand}" Style="{StaticResource NavButtonStyle}" />
+                    <Button x:Name="SettingsButton" Content="Templates" Command="{Binding NavigateTemplatesCommand}" Style="{StaticResource NavButtonStyle}" />
+                </StackPanel>
+            </Grid>
+        </Border>
+        <ContentPresenter Content="{Binding Navigation.CurrentView}" Grid.Row="1"/>
+
     </Grid>
+    
+    
 </Window>

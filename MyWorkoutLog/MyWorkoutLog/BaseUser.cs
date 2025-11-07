@@ -6,7 +6,6 @@ namespace MyWorkoutLog
           private string _username;
           private string _password;
           private bool _accountPermissions;
-          private Workout? _currentWorkout;
           public BaseUser(string name, string password)
           {
                _username = name;
@@ -18,17 +17,11 @@ namespace MyWorkoutLog
           public virtual void ClearData()
           {
                _workoutHistory.Clear();
-               _currentWorkout = null;
           }
 
-          public void StartWorkout(Workout workout)
+          public void AddWorkout(Workout workout)
           {
-               _currentWorkout = workout;
-          }
-          public void FinishWorkout()
-          {
-               _workoutHistory.Add(_currentWorkout, DateOnly.FromDateTime(DateTime.Now));
-               _currentWorkout = null;
+               _workoutHistory.Add(workout, DateOnly.FromDateTime(DateTime.Now));
           }
 
           // Properties
@@ -68,12 +61,6 @@ namespace MyWorkoutLog
                }
           }
 
-          public Workout? CurrentWorkout
-          {
-               get
-               {
-                    return _currentWorkout;
-               }
-          }
+          
      }
 }

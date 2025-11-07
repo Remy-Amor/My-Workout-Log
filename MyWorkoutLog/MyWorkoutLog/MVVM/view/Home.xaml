@@ -4,10 +4,62 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MyWorkoutLog.view"
+             xmlns:MyWorkoutLog="clr-namespace:MyWorkoutLog" xmlns:viewmodels="clr-namespace:MyWorkoutLog.MVVM.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:HomeViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="450"
              Background="#1E6091">
-    <Grid>
-            
+
+
+    <UserControl.Resources>
+        <!-- Color Palette -->
+        <Color x:Key="DarkBlue">#FF1E6091</Color>
+        <Color x:Key="Teal">#FF34A0A4</Color>
+        <Color x:Key="LightGreen">#FF76C893</Color>
+        <Color x:Key="SeaGreen">#FF52B69A</Color>
+        <Color x:Key="Navy">#FF184E77</Color>
+
+
+        <!-- Brushes -->
+        <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Teal}" />
+        <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource SeaGreen}" />
+        <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource DarkBlue}" />
+        <SolidColorBrush x:Key="CardBackgroundBrush" Color="{StaticResource LightGreen}" />
+        <SolidColorBrush x:Key="TextBrush" Color="White" />
+
+
+        <!-- Button Style -->
+        <Style TargetType="Button" x:Key="PrimaryButton">
+            <Setter Property="Padding" Value="12,8" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="MinWidth" Value="160" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0,12,0,0" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Background" Value="{StaticResource AccentBrush}" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" Opacity="0.3" BlurRadius="8" />
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource PrimaryBrush}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    
+    <!-- Home view content-->
+    <Grid Background="{StaticResource BackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+    
     </Grid>
 </UserControl>
+
