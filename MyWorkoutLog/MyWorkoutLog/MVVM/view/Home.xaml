@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MyWorkoutLog.view"
-             xmlns:MyWorkoutLog="clr-namespace:MyWorkoutLog" xmlns:viewmodels="clr-namespace:MyWorkoutLog.MVVM.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:HomeViewModel}"
+             xmlns:MyWorkoutLog="clr-namespace:MyWorkoutLog" xmlns:ViewModels="clr-namespace:MyWorkoutLog.MVVM.ViewModels" d:DataContext="{d:DesignInstance Type=ViewModels:HomeViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="450"
              Background="#1E6091">
@@ -28,13 +28,14 @@
 
 
         <!-- Button Style -->
+        
         <Style TargetType="Button" x:Key="PrimaryButton">
             <Setter Property="Padding" Value="12,8" />
             <Setter Property="FontSize" Value="16" />
-            <Setter Property="MinWidth" Value="160" />
+            <Setter Property="MinWidth" Value="140" />
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="VerticalAlignment" Value="Center" />
-            <Setter Property="Margin" Value="0,12,0,0" />
+            <Setter Property="Margin" Value="0,10,0,0" />
             <Setter Property="BorderThickness" Value="0" />
             <Setter Property="Background" Value="{StaticResource AccentBrush}" />
             <Setter Property="Foreground" Value="White" />
@@ -52,14 +53,36 @@
             </Style.Triggers>
         </Style>
     </UserControl.Resources>
-    
+
     <!-- Home view content-->
     <Grid Background="{StaticResource BackgroundBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-    
+
+
+        <Grid Grid.Row="1">
+            <Border Padding="32" CornerRadius="16" Background="{StaticResource CardBackgroundBrush}"
+            HorizontalAlignment="Center" VerticalAlignment="Center" Width="500" Height="300">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="400">
+                    <TextBlock Text="Welcome," FontSize="22" FontWeight="SemiBold" Foreground="Navy" />
+                    <TextBlock Text="{Binding CurrentUsername, FallbackValue=Guest}" FontSize="30" FontWeight="Bold" Foreground="Navy" Margin="0,4,0,16" />
+                    <TextBlock Text="Ready for today's workout?" FontSize="16" Foreground="Navy" Opacity="0.9" />
+
+
+                    <Button Style="{StaticResource PrimaryButton}" x:Name="viewTemplatesButton" Width="200" Height="45">
+                        <TextBlock Text="Start Workout" FontSize="18" />
+                    </Button>
+
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,12,0,0">
+                        <TextBlock Text="Or " Foreground="White" VerticalAlignment="Center" FontSize="14" />
+                        <Button Content="View Templates" Command="{Binding NavigateTemplatesCommand}" Style="{StaticResource PrimaryButton}" Width="140" Height="38" Margin="8,0,0,0" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
     </Grid>
 </UserControl>
 

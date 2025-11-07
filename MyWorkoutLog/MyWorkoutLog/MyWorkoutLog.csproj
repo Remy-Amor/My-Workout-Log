@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <Folder Include="images\" />
-    <Folder Include="viewmodels\" />
+    <Folder Include="MVVM\ViewModels\" />
   </ItemGroup>
 
   <ItemGroup>
