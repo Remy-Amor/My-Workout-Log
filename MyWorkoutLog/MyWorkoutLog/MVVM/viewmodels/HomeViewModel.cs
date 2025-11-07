@@ -1,14 +1,14 @@
 using System;
 using MyWorkoutLog;
+using MyWorkoutLog.Core;
 
-namespace MyWorkoutLog.MVVM.ViewModels
-{
+namespace MyWorkoutLog.MVVM.ViewModels;
 
-     public class HomeViewModel
+
+     public class HomeViewModel : ViewModel
      {
           public HomeViewModel()
           {
                
           }
      }
-}

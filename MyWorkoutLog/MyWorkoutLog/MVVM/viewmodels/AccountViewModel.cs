@@ -1,6 +1,8 @@
+using MyWorkoutLog.Core;
+
 namespace MyWorkoutLog.MVVM.ViewModels;
 
-public class AccountViewModel
+public class AccountViewModel : ViewModel
 {
      
 }

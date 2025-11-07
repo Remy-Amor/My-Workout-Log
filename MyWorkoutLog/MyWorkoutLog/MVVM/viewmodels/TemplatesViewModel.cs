@@ -1,6 +1,8 @@
+using MyWorkoutLog.Core;
+
 namespace MyWorkoutLog.MVVM.ViewModels;
 
-public class TemplatesViewModel
+public class TemplatesViewModel : ViewModel
 {
      
 }

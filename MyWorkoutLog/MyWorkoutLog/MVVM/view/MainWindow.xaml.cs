@@ -16,7 +16,7 @@ namespace MyWorkoutLog
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Exercise testExercise = new Exercise("Something", EquipmentType.barbell);
+        
         public MainWindow()
         {
             InitializeComponent();

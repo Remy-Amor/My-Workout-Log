@@ -30,3 +30,8 @@ C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workou
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MyWorkoutLog.pdb
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MyWorkoutLog.genruntimeconfig.cache
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\ref\MyWorkoutLog.dll
+C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\bin\Debug\net8.0-windows8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\bin\Debug\net8.0-windows8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MyWorkoutLog.csproj.AssemblyReference.cache
+C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\App.baml
+C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MyWorkou.66554DB0.Up2Date
