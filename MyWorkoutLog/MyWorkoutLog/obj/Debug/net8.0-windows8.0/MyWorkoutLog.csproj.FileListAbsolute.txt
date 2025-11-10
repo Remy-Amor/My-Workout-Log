@@ -12,6 +12,7 @@ C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workou
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\Home.g.cs
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\MainWindow.g.cs
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\Templates.g.cs
+C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\Workout.g.cs
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\App.g.cs
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\GeneratedInternalTypeHelper.g.cs
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MyWorkoutLog_MarkupCompile.cache
@@ -23,6 +24,7 @@ C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workou
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\Home.baml
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\MainWindow.baml
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\Templates.baml
+C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\Workout.baml
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MyWorkoutLog.g.resources
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MyWorkoutLog.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MyWorkoutLog.AssemblyInfoInputs.cache

@@ -28,6 +28,7 @@ namespace MyWorkoutLog
             services.AddSingleton<ExercisesViewModel>();
             services.AddSingleton<HistoryViewModel>();
             services.AddSingleton<TemplatesViewModel>();
+            services.AddSingleton<WorkoutViewModel>();
 
 
             // add navigation service defined in NavigationService.cs

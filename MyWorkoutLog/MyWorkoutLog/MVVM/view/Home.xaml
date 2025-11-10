@@ -71,7 +71,7 @@
                     <TextBlock Text="Ready for today's workout?" FontSize="16" Foreground="Navy" Opacity="0.9" />
 
 
-                    <Button Style="{StaticResource PrimaryButton}" x:Name="viewTemplatesButton" Width="200" Height="45">
+                    <Button Command="{Binding NavigateWorkoutCommand}" Style="{StaticResource PrimaryButton}" x:Name="viewTemplatesButton" Width="200" Height="45">
                         <TextBlock Text="Start Workout" FontSize="18" />
                     </Button>
 

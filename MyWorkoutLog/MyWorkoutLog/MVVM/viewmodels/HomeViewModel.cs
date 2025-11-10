@@ -69,6 +69,7 @@ namespace MyWorkoutLog.MVVM.ViewModels
         public RelayCommand NavigateTemplatesCommand { get; set; }
         public RelayCommand NavigateMainCommand { get; set; }
         public RelayCommand NavigateHomeCommand { get; set; }
+        public RelayCommand NavigateWorkoutCommand { get; set; }
 
 
 
@@ -84,7 +85,7 @@ namespace MyWorkoutLog.MVVM.ViewModels
             NavigateTemplatesCommand = new RelayCommand(execute: o => { Navigation.NavigateTo<TemplatesViewModel>(); }, canExecute: o => true);
             NavigateMainCommand = new RelayCommand(execute: o => { Navigation.NavigateTo<MainViewModel>(); }, canExecute: o => true);
             NavigateHomeCommand = new RelayCommand(execute: o => { Navigation.NavigateTo<HomeViewModel>(); }, canExecute: o => true);
-
+            NavigateWorkoutCommand = new RelayCommand(execute: o => { Navigation.NavigateTo<WorkoutViewModel>(); }, canExecute: o => true);
         }
     }
 }
