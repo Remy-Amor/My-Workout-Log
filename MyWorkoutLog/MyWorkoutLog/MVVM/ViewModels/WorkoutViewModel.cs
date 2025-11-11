@@ -28,8 +28,11 @@ namespace MyWorkoutLog.MVVM.ViewModels
         public WorkoutViewModel()
         {
             AddExerciseCommand = new RelayCommand(execute: o => AddExercise(), canExecute: o => true);
-            RemoveExerciseCommand = new RelayCommand(execute: o => Exercises.Remove(o as Exercise), canExecute: o => o is Exercise);
+            RemoveExerciseCommand = new RelayCommand(execute: o => RemoveExercise(o), canExecute: o => true);
             CompleteWorkoutCommand = new RelayCommand(execute: o => CompleteWorkout(), canExecute: o => Exercises.Count > 0);
+
+           
+
         }
 
         private void AddExercise()
@@ -37,13 +40,26 @@ namespace MyWorkoutLog.MVVM.ViewModels
             Exercises.Add(new Exercise("", EquipmentType.cablemachine));
         }
 
+        private void RemoveExercise(object o)
+        {
+
+            System.Diagnostics.Debug.WriteLine("RemoveExercise called. param: " + (o?.GetType().FullName ?? "null"));
+            if (o is not Exercise exercise) { System.Diagnostics.Debug.WriteLine("param not Exercise"); return; }
+            System.Diagnostics.Debug.WriteLine($"Removing {exercise.Name}. Count before: {Exercises.Count}");
+            Exercises.Remove(exercise);
+            System.Diagnostics.Debug.WriteLine($"Count after: {Exercises.Count}");
+        }
+
         private void CompleteWorkout()
         {
             Workout workout = new Workout(WorkoutName, Notes, Exercises.ToList());
             SessionData.CurrentUser.AddWorkout(workout);
             Exercises.Clear();
-            WorkoutName = string.Empty;
-            Notes = string.Empty;
+            WorkoutName = "";
+            Notes = "";
+            OnPropertyChanged(nameof(WorkoutName)); 
+            OnPropertyChanged(nameof(Notes));
+
         }
     }
 }
