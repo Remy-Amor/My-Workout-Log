@@ -1,7 +1,11 @@
+using System.Collections.Specialized;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
 namespace MyWorkoutLog
 {
-     public class Exercise : DescribableObject
-     {
+     public class Exercise : DescribableObject, INotifyPropertyChanged
+    {
           private int _reps;
           private float _weight;
           private WeightUnit _weightUnit;
@@ -36,8 +40,10 @@ namespace MyWorkoutLog
                set
                {
                     _reps = value;
-               }
-          }
+                OnPropertyChanged();
+
+            }
+        }
 
           public float Weight
           {
@@ -48,8 +54,10 @@ namespace MyWorkoutLog
                set
                {
                     _weight = value;
-               }
-          }
+                OnPropertyChanged();
+
+            }
+        }
 
           public WeightUnit WeightUnit
           {
@@ -60,8 +68,10 @@ namespace MyWorkoutLog
                set
                {
                     _weightUnit = value;
-               }
-          }
+                OnPropertyChanged();
+
+            }
+        }
 
           public EquipmentType Equipment
           {
@@ -72,7 +82,12 @@ namespace MyWorkoutLog
                set
                {
                     _equipment = value;
+                OnPropertyChanged();
                }
           }
-     }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged([CallerMemberName] string name = null)
+            => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+    }
 }
