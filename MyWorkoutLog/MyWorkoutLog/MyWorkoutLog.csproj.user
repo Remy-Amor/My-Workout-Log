@@ -5,6 +5,12 @@
     <Compile Update="MVVM\view\Home.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="MVVM\view\Register.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\view\SignIn.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="MVVM\view\Workout.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

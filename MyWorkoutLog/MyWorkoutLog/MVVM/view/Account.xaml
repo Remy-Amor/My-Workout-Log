@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:MyWorkoutLog.view" xmlns:ViewModels="clr-namespace:MyWorkoutLog.MVVM.ViewModels" d:DataContext="{d:DesignInstance Type=ViewModels:AccountViewModel}"
+             xmlns:local="clr-namespace:MyWorkoutLog.view" 
+             xmlns:ViewModels="clr-namespace:MyWorkoutLog.MVVM.ViewModels" d:DataContext="{d:DesignInstance Type=ViewModels:AccountViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="450"
              Background="#1E6091">
@@ -65,21 +66,26 @@
                     <TextBlock Text="Current User:" FontSize="18" FontWeight="SemiBold" Foreground="Navy" />
                     <TextBlock Text="{Binding CurrentUsername, FallbackValue=Guest}" FontSize="22" FontWeight="Bold" Foreground="Navy" Margin="0,4,0,20" />
 
-
+                    <Button x:Name="RegisterButton"
+                        Style="{StaticResource PrimaryButton}"
+                        Width="200" Height="45" Background="Turquoise"
+                         Command="{Binding NavigateRegisterCommand}">
+                        <TextBlock Text="Register" FontSize="18"/>
+                    </Button>
                     <Button x:Name="SignInButton"
                         Style="{StaticResource PrimaryButton}"
                         Width="200" Height="45"
-                        Visibility="Collapsed">     
+                        Visibility="Collapsed" Command="{Binding NavigateSignInCommand}">     
                         <TextBlock Text="Sign In" FontSize="18"/>
                     </Button>
 
 
-                    <Button Style="{StaticResource PrimaryButton}" x:Name="SignOutButton"  Width="200" Height="45">
+                    <Button Style="{StaticResource PrimaryButton}" x:Name="SignOutButton" Command="{Binding SignOutCommand}" Width="200" Height="45">
                         <TextBlock Text="Sign Out" FontSize="18" />
                     </Button>
 
 
-                    <Button Style="{StaticResource PrimaryButton}" x:Name="ClearDataButton"  Width="200" Height="45" Background="{StaticResource PrimaryBrush}">
+                    <Button Style="{StaticResource PrimaryButton}" Command="{Binding ClearDataCommand}" x:Name="ClearDataButton"  Width="200" Height="45" Background="{StaticResource PrimaryBrush}">
                         <TextBlock Text="Clear Data" FontSize="18" />
                     </Button>
                 </StackPanel>

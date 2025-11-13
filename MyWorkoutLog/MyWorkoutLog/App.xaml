@@ -1,11 +1,10 @@
-﻿<Application x:Class="MyWorkoutLog.App"
+﻿
+<Application x:Class="MyWorkoutLog.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:MyWorkoutLog"
              xmlns:viewModels="clr-namespace:MyWorkoutLog.MVVM.ViewModels"
-
-             xmlns:view="clr-namespace:MyWorkoutLog.view"
-             >
+             xmlns:view="clr-namespace:MyWorkoutLog.view">
     <Application.Resources>
         <DataTemplate DataType="{x:Type viewModels:AccountViewModel}">
             <view:Account/>
@@ -22,5 +21,12 @@
         <DataTemplate DataType="{x:Type viewModels:WorkoutViewModel}">
             <view:Workout></view:Workout>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:SignInViewModel}">
+            <view:SignIn></view:SignIn>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:RegisterViewModel}">
+            <view:Register></view:Register>
+        </DataTemplate>
+
     </Application.Resources>
 </Application>

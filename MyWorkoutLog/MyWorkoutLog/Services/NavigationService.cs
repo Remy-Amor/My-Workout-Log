@@ -34,5 +34,6 @@ public class NavigationService : ObservableObject, INavigationService
     {
         ViewModel viewModel = _viewModelFactory.Invoke(typeof(TViewModel));
         CurrentView = viewModel;
+        System.Diagnostics.Debug.WriteLine($"Navigated to {typeof(TViewModel).Name}");
     }
 }
