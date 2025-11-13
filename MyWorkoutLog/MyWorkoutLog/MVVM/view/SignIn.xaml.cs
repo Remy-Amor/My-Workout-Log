@@ -23,6 +23,7 @@ namespace MyWorkoutLog.view
     {
         public SignIn()
         {
+            InitializeComponent();
         }
     }
 }

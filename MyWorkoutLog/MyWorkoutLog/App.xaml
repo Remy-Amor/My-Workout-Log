@@ -25,7 +25,7 @@
             <view:SignIn></view:SignIn>
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:RegisterViewModel}">
-            <view:Register></view:Register>
+            <view:Register/>
         </DataTemplate>
 
     </Application.Resources>

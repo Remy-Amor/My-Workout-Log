@@ -22,7 +22,7 @@ namespace MyWorkoutLog.view
     {
         public Register()
         {
-            
+            InitializeComponent();
         }
     }
 }

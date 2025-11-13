@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MyWorkoutLog.MVVM.ViewModels
 {
-    class RegisterViewModel : ViewModel
+    public class RegisterViewModel : ViewModel
     {
 
         public string Username { get; set; } = string.Empty;
@@ -31,7 +31,8 @@ namespace MyWorkoutLog.MVVM.ViewModels
 
         public RegisterViewModel(INavigationService navService)
         {
-            NavigateAccountCommand = new RelayCommand(execute: o => { navService.NavigateTo<AccountViewModel>(); }, canExecute: o => true);
+           Navigation = navService;
+            NavigateAccountCommand = new RelayCommand(execute: o => { Navigation.NavigateTo<AccountViewModel>(); }, canExecute: o => true);
 
             RegisterUserCommand = new RelayCommand(execute: o => { RegisterUser(); }, canExecute: o => true);
 
