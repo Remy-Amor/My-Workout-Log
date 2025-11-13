@@ -25,17 +25,18 @@ namespace MyWorkoutLog
             services.AddSingleton<MainViewModel>();
             services.AddSingleton<HomeViewModel>();
             services.AddSingleton<AccountViewModel>();
-            services.AddSingleton<ExercisesViewModel>();
             services.AddSingleton<HistoryViewModel>();
             services.AddSingleton<TemplatesViewModel>();
             services.AddSingleton<WorkoutViewModel>();
+            services.AddSingleton<SignInViewModel>();
+            services.AddSingleton<RegisterViewModel>();
 
+            // register the factory function for returning or creating the viewmodel using service provider and navigationservice
+            services.AddSingleton<Func<Type, ViewModel>>(serviceProvider => viewModelType => (ViewModel)serviceProvider.GetRequiredService(viewModelType));
 
             // add navigation service defined in NavigationService.cs
             services.AddSingleton<INavigationService, Services.NavigationService>();
 
-            // register the factory function for returning or creating the viewmodel using service provider and navigationservice
-            services.AddSingleton<Func<Type, ViewModel>>(serviceProvider => viewModelType => (ViewModel)serviceProvider.GetRequiredService(viewModelType));
 
             // create service provider containing services added to the IServiceCollcetion services
             _serviceProvider = services.BuildServiceProvider();
@@ -46,6 +47,7 @@ namespace MyWorkoutLog
         {
 
             var mainWindow = _serviceProvider.GetRequiredService<MainWindow>();
+            
             mainWindow.Show();
             base.OnStartup(e);
         }

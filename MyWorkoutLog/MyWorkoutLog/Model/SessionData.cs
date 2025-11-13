@@ -4,8 +4,6 @@ public static class SessionData
 {
     private static BaseUser _currentUser = new Guest();
     private static List<RegisteredUser> registeredUsers = new();
-   private static readonly BaseExercises exercises = new();
-
     public static event Action? CurrentUserChanged;
     public static event Action? RegisteredUsersChanged;
 

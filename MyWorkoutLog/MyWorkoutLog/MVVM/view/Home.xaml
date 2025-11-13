@@ -4,7 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MyWorkoutLog.view"
-             xmlns:MyWorkoutLog="clr-namespace:MyWorkoutLog" xmlns:ViewModels="clr-namespace:MyWorkoutLog.MVVM.ViewModels" d:DataContext="{d:DesignInstance Type=ViewModels:HomeViewModel}"
+             xmlns:MyWorkoutLog="clr-namespace:MyWorkoutLog" 
+             xmlns:ViewModels="clr-namespace:MyWorkoutLog.MVVM.ViewModels" 
+             d:DataContext="{d:DesignInstance Type=ViewModels:HomeViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="450"
              Background="#1E6091">

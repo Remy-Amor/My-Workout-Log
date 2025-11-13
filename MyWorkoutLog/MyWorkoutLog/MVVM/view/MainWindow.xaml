@@ -66,7 +66,6 @@
                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
                     <Button x:Name="HomeButton" Content="Home" Command="{Binding NavigateHomeCommand}" Style="{StaticResource NavButtonStyle}"/>
                     <Button x:Name="AccountButton" Content="Account" Command="{Binding NavigateAccountCommand}" Style="{StaticResource NavButtonStyle}"/>
-                    <Button x:Name="ProjectsButton" Content="Exercises" Command="{Binding NavigateExercisesCommand}" Style="{StaticResource NavButtonStyle}" />
                     <Button x:Name="AnalyticsButton" Content="History" Command="{Binding NavigateHistoryCommand}" Style="{StaticResource NavButtonStyle}" />
                     <Button x:Name="SettingsButton" Content="Templates" Command="{Binding NavigateTemplatesCommand}" Style="{StaticResource NavButtonStyle}" />
                 </StackPanel>

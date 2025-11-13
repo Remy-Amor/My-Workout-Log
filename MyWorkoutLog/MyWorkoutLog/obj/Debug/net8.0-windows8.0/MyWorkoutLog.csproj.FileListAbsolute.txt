@@ -7,10 +7,11 @@ C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workou
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\bin\Debug\net8.0-windows8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MyWorkoutLog.csproj.AssemblyReference.cache
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\Account.g.cs
-C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\Exercises.g.cs
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\History.g.cs
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\Home.g.cs
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\MainWindow.g.cs
+C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\Register.g.cs
+C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\SignIn.g.cs
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\Templates.g.cs
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\Workout.g.cs
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\App.g.cs
@@ -19,10 +20,11 @@ C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workou
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MyWorkoutLog_MarkupCompile.lref
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\App.baml
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\Account.baml
-C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\Exercises.baml
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\History.baml
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\Home.baml
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\MainWindow.baml
+C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\Register.baml
+C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\SignIn.baml
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\Templates.baml
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MVVM\view\Workout.baml
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\obj\Debug\net8.0-windows8.0\MyWorkoutLog.g.resources
