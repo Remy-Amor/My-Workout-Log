@@ -25,7 +25,6 @@ namespace MyWorkoutLog
             services.AddSingleton<MainViewModel>();
             services.AddSingleton<HomeViewModel>();
             services.AddSingleton<AccountViewModel>();
-            services.AddSingleton<ExercisesViewModel>();
             services.AddSingleton<HistoryViewModel>();
             services.AddSingleton<TemplatesViewModel>();
             services.AddSingleton<WorkoutViewModel>();
@@ -46,6 +45,7 @@ namespace MyWorkoutLog
         {
 
             var mainWindow = _serviceProvider.GetRequiredService<MainWindow>();
+            
             mainWindow.Show();
             base.OnStartup(e);
         }

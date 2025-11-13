@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS8_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS8_0_OR_GREATER;WINDOWS7_0_OR_GREATER
 C:\Users\remyo\OneDrive\Documents\compSci_Y1\Semester 2\objectOriented\My Workout Log\MyWorkoutLog\MyWorkoutLog\App.xaml
-72118519974
+61817402334
 
-361439431015
+332135812685
 2001854130492
-MVVM\view\Account.xaml;MVVM\view\Exercises.xaml;MVVM\view\History.xaml;MVVM\view\Home.xaml;MVVM\view\MainWindow.xaml;MVVM\view\Templates.xaml;MVVM\view\Workout.xaml;
+MVVM\view\Account.xaml;MVVM\view\History.xaml;MVVM\view\Home.xaml;MVVM\view\MainWindow.xaml;MVVM\view\Templates.xaml;MVVM\view\Workout.xaml;
 
 True
 

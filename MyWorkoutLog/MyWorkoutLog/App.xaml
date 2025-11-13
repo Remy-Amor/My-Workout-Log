@@ -10,9 +10,6 @@
         <DataTemplate DataType="{x:Type viewModels:AccountViewModel}">
             <view:Account/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewModels:ExercisesViewModel}">
-            <view:Exercises/>
-        </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:HistoryViewModel}">
             <view:History/>
         </DataTemplate>

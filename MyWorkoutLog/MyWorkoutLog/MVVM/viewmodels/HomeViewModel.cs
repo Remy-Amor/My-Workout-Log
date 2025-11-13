@@ -80,7 +80,6 @@ namespace MyWorkoutLog.MVVM.ViewModels
             Navigation = navService;
             // takes the action (execute) and the predicate (canExecute). they are delegates, so stored as the methods, not their results   
             NavigateAccountCommand = new RelayCommand(execute: o => { Navigation.NavigateTo<AccountViewModel>(); }, canExecute: o => true);
-            NavigateExercisesCommand = new RelayCommand(execute: o => { Navigation.NavigateTo<ExercisesViewModel>(); }, canExecute: o => true);
             NavigateHistoryCommand = new RelayCommand(execute: o => { Navigation.NavigateTo<HistoryViewModel>(); }, canExecute: o => true);
             NavigateTemplatesCommand = new RelayCommand(execute: o => { Navigation.NavigateTo<TemplatesViewModel>(); }, canExecute: o => true);
             NavigateMainCommand = new RelayCommand(execute: o => { Navigation.NavigateTo<MainViewModel>(); }, canExecute: o => true);
