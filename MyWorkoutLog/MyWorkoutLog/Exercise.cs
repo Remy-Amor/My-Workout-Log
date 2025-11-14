@@ -1,6 +1,7 @@
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows;
 
 namespace MyWorkoutLog
 {
@@ -53,7 +54,8 @@ namespace MyWorkoutLog
                }
                set
                {
-                    _weight = value;
+             
+                _weight = value;
                 OnPropertyChanged();
 
             }
@@ -89,5 +91,22 @@ namespace MyWorkoutLog
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged([CallerMemberName] string name = null)
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+
+
+        // for notes visibility in workout history
+        public Visibility NotesVisibility
+        {
+            get
+            {
+                if(this.Note == null || this.Note.Trim() == "")
+                {
+                    return Visibility.Collapsed;
+                }
+                else
+                {
+                    return Visibility.Visible;
+                }
+            }
+        }
     }
 }

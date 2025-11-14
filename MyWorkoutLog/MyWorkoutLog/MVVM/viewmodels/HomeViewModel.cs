@@ -6,12 +6,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace MyWorkoutLog.MVVM.ViewModels
 {
     public class HomeViewModel : ViewModel
     {
         private string? _currentUsername;
+
+        public Visibility ViewTemplatesVisibility {
+            get
+            {
+                if (SessionData.CurrentUser != null && SessionData.CurrentUser.AccountPermissions)
+                {
+                    return Visibility.Visible;
+                }
+                else
+                {
+                    return Visibility.Collapsed;
+                }
+            }
+        }
         public string? CurrentUsername
         {
             get { return _currentUsername; }

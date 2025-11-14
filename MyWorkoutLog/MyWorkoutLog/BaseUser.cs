@@ -1,8 +1,10 @@
+using MyWorkoutLog.Services;
+using System;
 namespace MyWorkoutLog
 {
      public abstract class BaseUser : IUsers
      {
-          private Dictionary<Workout, DateOnly> _workoutHistory;
+          private ObservableDictionary<Workout, DateOnly> _workoutHistory;
           private string _username;
           private string _password;
           private bool _accountPermissions;
@@ -10,7 +12,7 @@ namespace MyWorkoutLog
           {
                _username = name;
                _password = password;
-               _workoutHistory = new Dictionary<Workout, DateOnly>();
+               _workoutHistory = new ObservableDictionary<Workout, DateOnly>();
                _accountPermissions = false;
           }
 
@@ -25,7 +27,7 @@ namespace MyWorkoutLog
           }
 
           // Properties
-          public Dictionary<Workout, DateOnly> WorkoutHistory
+          public ObservableDictionary<Workout, DateOnly> WorkoutHistory
           {
                get
                {
