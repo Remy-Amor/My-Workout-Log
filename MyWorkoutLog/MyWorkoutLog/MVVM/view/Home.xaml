@@ -79,8 +79,8 @@
 
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,12,0,0">
-                        <TextBlock Text="Or " Foreground="White" VerticalAlignment="Center" FontSize="14" />
-                        <Button Content="View Templates" Command="{Binding NavigateTemplatesCommand}" Style="{StaticResource PrimaryButton}" Width="140" Height="38" Margin="8,0,0,0" />
+                        <TextBlock Text="Or " Visibility="{Binding ViewTemplatesVisibility}" Foreground="White" VerticalAlignment="Center" FontSize="14" />
+                        <Button Content="View Templates" Visibility="{Binding ViewTemplatesVisibility}" Command="{Binding NavigateTemplatesCommand}" Style="{StaticResource PrimaryButton}" Width="140" Height="38" Margin="8,0,0,0" />
                     </StackPanel>
                 </StackPanel>
             </Border>

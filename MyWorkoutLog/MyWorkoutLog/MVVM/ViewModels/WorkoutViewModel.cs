@@ -1,11 +1,10 @@
 ﻿using MyWorkoutLog;
 using MyWorkoutLog.Core;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
+using System.Text.RegularExpressions;
+using System.Windows;
+using System.Windows.Data;
 using System.Windows.Input;
 
 namespace MyWorkoutLog.MVVM.ViewModels
@@ -24,8 +23,10 @@ namespace MyWorkoutLog.MVVM.ViewModels
         public RelayCommand RemoveExerciseCommand { get; set; }
         public RelayCommand CompleteWorkoutCommand { get; set; }
 
+        
 
-        public WorkoutViewModel()
+
+    public WorkoutViewModel()
         {
             AddExerciseCommand = new RelayCommand(execute: o => AddExercise(), canExecute: o => true);
             RemoveExerciseCommand = new RelayCommand(execute: o => RemoveExercise(o), canExecute: o => true);
@@ -52,14 +53,51 @@ namespace MyWorkoutLog.MVVM.ViewModels
 
         private void CompleteWorkout()
         {
-            Workout workout = new Workout(WorkoutName, Notes, Exercises.ToList());
-            SessionData.CurrentUser.AddWorkout(workout);
-            Exercises.Clear();
-            WorkoutName = "";
-            Notes = "";
-            OnPropertyChanged(nameof(WorkoutName)); 
-            OnPropertyChanged(nameof(Notes));
+            // stop if any empty exercises
+            for (int i = 0; i < Exercises.Count; i++)
+            {
+                Exercise exercise = Exercises[i];
+                if (exercise.Name == "" || exercise.Reps == 0)
+                {
+                    MessageBox.Show($"Please fill out all required fields for exercise {i + 1} before completing the workout.");
+                    return;
+                }
+                else if (exercise.Weight < 0)
 
+                {
+                    MessageBox.Show($"Weight cannot be negative for exercise {i + 1}. Please correct the weight value before completing the workout.");
+                    return;
+                }
+            }
+                    Workout workout = new Workout(WorkoutName, Notes, Exercises.ToList());
+                    SessionData.CurrentUser.AddWorkout(workout);
+                    Exercises.Clear();
+                    WorkoutName = "";
+                    Notes = "";
+                    OnPropertyChanged(nameof(WorkoutName));
+                    OnPropertyChanged(nameof(Notes));
+             
+        }
+    }
+
+
+
+    // for converting between int and string in bindings
+    public class IntConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return value?.ToString() ?? "";
+        }
+
+        public object? ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            var str = value as string;
+
+            if (int.TryParse(str, out int num))
+                return num;
+
+            return null; // Prevents exceptions
         }
     }
 }
