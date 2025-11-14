@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MyWorkoutLog.view"
+             xmlns:t="clr-namespace:MyWorkoutLog.Services"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="450"
              Background="#1E6091">
@@ -48,11 +49,98 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+
+        <!-- Exercise list style-->
+        <Style TargetType="TextBlock" x:Key="ExerciseTextBlockStyle">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Padding" Value="6,0,6,0" />
+            <Setter Property="Background" Value="#76C893" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="Margin" Value="0,4,0,0" />
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        </Style>
     </UserControl.Resources>
-    <Grid>
+    <Grid Margin="20">
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="Auto"/>
+            <!-- Header -->
             <RowDefinition Height="*"/>
+            <!-- Scrollable content -->
+            <RowDefinition Height="Auto"/>
+            <!-- Complete button -->
         </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <TextBlock Text="Templates"
+               FontSize="28"
+               Foreground="White"
+               FontWeight="Bold"
+               HorizontalAlignment="Center"
+               Margin="0,10,0,20"/>
+
+        <!-- Scrollable Workout Info -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel Orientation="Vertical">
+                <!-- Workout list -->
+                <ItemsControl ItemsSource="{Binding Templates}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Background="#52B69A" Margin="0,5,0,5" Padding="10">
+                                <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <TextBlock Text="Workout Name:" FontSize="14" Padding="6" 
+                                         Background="#34A0A4" Foreground="White" FontWeight="Bold" />
+                                        <TextBlock Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
+                                         FontSize="14" Padding="6" 
+                                         Background="#76C893" Foreground="Black" />
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                                        <TextBlock Text="Workout Notes:" FontSize="14" Padding="6" 
+                                            Background="#34A0A4" Foreground="White" FontWeight="Bold" />
+                                        <TextBlock Text="{Binding Note, UpdateSourceTrigger=PropertyChanged}"
+                                         FontSize="14" Padding="6"
+                                         Background="#76C893" Foreground="Black" 
+                                         Margin="0,4,0,0"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <TextBlock Text="Workout Date:" FontSize="14" Padding="6" 
+                                            Background="#34A0A4" Foreground="White" FontWeight="Bold" />
+                                        <TextBlock Text="{Binding Value, UpdateSourceTrigger=PropertyChanged}"
+                                         FontSize="14" Padding="6"
+                                         Background="#76C893" Foreground="Black" 
+                                         Margin="0,4,0,0"/>
+                                    </StackPanel>
+                                    <ItemsControl ItemsSource="{Binding Key.ExerciseList}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Background="#34A0A4" Margin="0,5,0,5" Padding="8">
+                                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
+                                                        <TextBlock Text="{Binding Name, StringFormat='Name: {0}', UpdateSourceTrigger=PropertyChanged}"
+                                                             Style="{StaticResource ExerciseTextBlockStyle}" />
+                                                        <TextBlock Text="{Binding Note, StringFormat='Notes: {0}', UpdateSourceTrigger=PropertyChanged}"
+                                                             Style="{StaticResource ExerciseTextBlockStyle}" Visibility="{Binding NotesVisibility}"/>
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding Weight, UpdateSourceTrigger=PropertyChanged}"
+                                                             Style="{StaticResource ExerciseTextBlockStyle}"/>
+                                                            <TextBlock Text="{Binding WeightUnit, UpdateSourceTrigger=PropertyChanged}"
+                                                             Style="{StaticResource ExerciseTextBlockStyle}" Padding="0,0,100,0"/>
+                                                        </StackPanel>
+                                                        <TextBlock Text="{Binding Equipment, StringFormat='Equipment: {0}', UpdateSourceTrigger=PropertyChanged}"
+                                                         Style="{StaticResource ExerciseTextBlockStyle}"/>
+                                                        <TextBlock Text="{Binding Reps, StringFormat='Reps: {0}', UpdateSourceTrigger=PropertyChanged}"
+                                                         Style="{StaticResource ExerciseTextBlockStyle}"/>
+                                                    </StackPanel>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>
