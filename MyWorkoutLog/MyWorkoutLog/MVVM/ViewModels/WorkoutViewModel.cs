@@ -22,6 +22,7 @@ namespace MyWorkoutLog.MVVM.ViewModels
         public RelayCommand AddExerciseCommand { get; set; }
         public RelayCommand RemoveExerciseCommand { get; set; }
         public RelayCommand CompleteWorkoutCommand { get; set; }
+        public RelayCommand SaveAsTemplateCommand { get; set; }
 
         
 
@@ -31,8 +32,8 @@ namespace MyWorkoutLog.MVVM.ViewModels
             AddExerciseCommand = new RelayCommand(execute: o => AddExercise(), canExecute: o => true);
             RemoveExerciseCommand = new RelayCommand(execute: o => RemoveExercise(o), canExecute: o => true);
             CompleteWorkoutCommand = new RelayCommand(execute: o => CompleteWorkout(), canExecute: o => Exercises.Count > 0);
+            SaveAsTemplateCommand = new RelayCommand(execute: o => SaveWorkoutAsTemplate(), canExecute: o => Exercises.Count > 0);
 
-           
 
         }
 
@@ -77,6 +78,40 @@ namespace MyWorkoutLog.MVVM.ViewModels
                     OnPropertyChanged(nameof(WorkoutName));
                     OnPropertyChanged(nameof(Notes));
              
+        }
+
+        private void SaveWorkoutAsTemplate()
+        {
+            // stop if any empty exercises
+            for (int i = 0; i < Exercises.Count; i++)
+            {
+                Exercise exercise = Exercises[i];
+                if (exercise.Name == "" || exercise.Reps == 0)
+                {
+                    MessageBox.Show($"Please fill out all required fields for exercise {i + 1} before saving the workout as a template.");
+                    return;
+                }
+                else if (exercise.Weight < 0)
+                {
+                    MessageBox.Show($"Weight cannot be negative for exercise {i + 1}. Please correct the weight value before saving the workout as a template.");
+                    return;
+                }
+            }
+            Workout workout = new Workout(WorkoutName, Notes, Exercises.ToList());
+            if (SessionData.CurrentUser is RegisteredUser user)
+            {
+                user.SaveAsTemplate(workout);
+                Exercises.Clear();
+                WorkoutName = "";
+                Notes = "";
+                OnPropertyChanged(nameof(WorkoutName));
+                OnPropertyChanged(nameof(Notes));
+                
+            }
+            else
+            {
+                               MessageBox.Show("Only registered users can save workout templates.");
+            }
         }
     }
 

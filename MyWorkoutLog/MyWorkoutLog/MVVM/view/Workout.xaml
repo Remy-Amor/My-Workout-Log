@@ -143,10 +143,21 @@
                 Foreground="White"
                 FontWeight="Bold"
                 FontSize="18"
-                Height="50"
+                Height="30"
                 BorderThickness="0"
-                Margin="0,20,0,0"
                 HorizontalAlignment="Center"
                 Width="250"/>
+        <Button Grid.Row="2"
+        Content="Save As Template"
+        Command="{Binding SaveAsTemplateCommand}"
+        Background="#184E77"
+        Foreground="White"
+        FontWeight="Bold"
+        FontSize="18"
+        Height="30"
+        BorderThickness="0"
+        Margin="0,100,0,20"
+        HorizontalAlignment="Center"
+        Width="250"/>
     </Grid>
 </UserControl>

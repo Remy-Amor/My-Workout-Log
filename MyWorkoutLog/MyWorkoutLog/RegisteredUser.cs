@@ -1,8 +1,13 @@
+using System.Collections.ObjectModel;
+using System.Windows;
+using MyWorkoutLog.Core;
+
+
 namespace MyWorkoutLog
 {
      public class RegisteredUser : BaseUser
      {
-          private List<Workout> _workoutTemplates = new List<Workout>();
+          private ObservableCollection<Workout> _workoutTemplates = new();
           private List<Exercise> _createdExercises = new List<Exercise>();
           public RegisteredUser(string name, string password) : base(name, password)
           {
@@ -12,6 +17,7 @@ namespace MyWorkoutLog
           public void SaveAsTemplate(Workout workout)
           {
                _workoutTemplates.Add(workout);
+           
           }
 
           public void RemoveTemplate(Workout workout)
@@ -36,7 +42,7 @@ namespace MyWorkoutLog
           }
 
           // properties
-          public List<Workout> WorkoutTemplates
+          public ObservableCollection<Workout> WorkoutTemplates
           {
                get
                {

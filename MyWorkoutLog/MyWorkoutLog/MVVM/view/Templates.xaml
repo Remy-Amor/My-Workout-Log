@@ -103,15 +103,8 @@
                                          Background="#76C893" Foreground="Black" 
                                          Margin="0,4,0,0"/>
                                     </StackPanel>
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                                        <TextBlock Text="Workout Date:" FontSize="14" Padding="6" 
-                                            Background="#34A0A4" Foreground="White" FontWeight="Bold" />
-                                        <TextBlock Text="{Binding Value, UpdateSourceTrigger=PropertyChanged}"
-                                         FontSize="14" Padding="6"
-                                         Background="#76C893" Foreground="Black" 
-                                         Margin="0,4,0,0"/>
-                                    </StackPanel>
-                                    <ItemsControl ItemsSource="{Binding Key.ExerciseList}">
+
+                                    <ItemsControl ItemsSource="{Binding ExerciseList}">
                                         <ItemsControl.ItemTemplate>
                                             <DataTemplate>
                                                 <Border Background="#34A0A4" Margin="0,5,0,5" Padding="8">
@@ -135,10 +128,17 @@
                                             </DataTemplate>
                                         </ItemsControl.ItemTemplate>
                                     </ItemsControl>
+                                    <Button x:Name="useTemplateButton" Content="Use This Template"
+                                     Command="{Binding DataContext.StartWorkoutFromTemplate, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                     CommandParameter="{Binding}"
+                                     Style="{StaticResource PrimaryButton}"/>
                                 </StackPanel>
                             </Border>
+                           
                         </DataTemplate>
+                        
                     </ItemsControl.ItemTemplate>
+                    
                 </ItemsControl>
             </StackPanel>
         </ScrollViewer>
